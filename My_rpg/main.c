@@ -16,14 +16,14 @@ void heal_self(Player_t *player, int max_hp)
 
 void player_attack(Player_t *player, Enemy_t *enemy)
 {
+    time_t t;
     enemy->hp -= player->str;
     my_putstr(enemy->def_msg);
     my_putstr("\n");
-    time_t t;
     srand((unsigned) time(&t));
     if (rand()%100 < player->luck) {
         enemy->hp -= player->str;
-        my_putchar("\nCritical !\n");
+        my_putstr("\nCritical !\n");
     }
 }
 

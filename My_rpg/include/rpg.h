@@ -50,4 +50,17 @@ typedef struct Boss_s
     int luck;
 }Boss_t;
 
+typedef struct Item_S
+{
+    char *name;
+    int hp;
+    int mp;
+    int str;
+    int inte;
+    int def;
+    int res;
+    int spd;
+    int luck;
+}Item_t;
+
 #endif /* !RPG_H_ */

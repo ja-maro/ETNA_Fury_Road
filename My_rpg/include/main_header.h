@@ -15,6 +15,8 @@ char *my_readline(void);
 void rpg_intro(void);
 Enemy_t *create_monster(int index);
 Enemy_t **init_enemy (void);
+Item_t *create_item(int index);
+Item_t **init_item (void);
 Player_t **init_player (void);
 Boss_t **init_boss (void);
 int my_strcmp(const char *s1, const char *s2);

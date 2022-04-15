@@ -9,19 +9,13 @@
 int main()
 {
     char *str;
+    rpg_intro();
 
     while(1) {
-
     str = my_readline();
     my_putstr(str);
-    my_putchar('\n');
+    my_putstr("\n");
     }
-
-
     
-    my_putchar('H');
-    my_putchar('e');
-    my_putchar('y');
-    my_putchar('\n');
     return 0;
 }

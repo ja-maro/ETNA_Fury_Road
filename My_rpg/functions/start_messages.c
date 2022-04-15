@@ -2,7 +2,7 @@
 ** ETNA PROJECT, 13/04/2022 by maro_j
 ** /home/jean-antoine/ETNA/CTW/Piscine
 ** File description:
-**     intro displays, the intro message and the rules
+**     Messages at the start of the stage
 */
 
 #include "colours.h"
@@ -116,7 +116,7 @@ my_putstr(cs_cmd[1]);
     my_putstr(cs_cmd[3]);
     my_putstr("\tTHE MOULINETTE\n");
     my_putstr(cs_cmd[0]);
-    my_putstr("Destroy it ! And unravel the truth of it's existence !");
+    my_putstr("Destroy it ! And unravel the truth of it's existence !\n");
 }
 
 void start_messages(int stage)

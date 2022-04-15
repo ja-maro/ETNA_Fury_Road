@@ -12,7 +12,7 @@ int main()
     /*Enemy_t **enemies = init_enemy();
     Player_t **players = init_player();
     Boss_t **bosses = init_boss(); */
-
+    int stage = 0;
     rpg_intro();
     /* readline loop */
     while(1) {
@@ -20,6 +20,8 @@ int main()
 
     my_putstr(str);
     my_putstr("\n");
+    start_messages(stage);
+    stage ++;
     }
     
     return 0;

@@ -16,7 +16,8 @@ SRC		=	main.c \
 			functions/init_player.c \
 			functions/init_boss.c \
 			functions/my_strcmp.c \
-			functions/my_strlen.c
+			functions/my_strlen.c \
+			functions/my_loot.c
 
 OBJ		=	$(SRC:.c=.o)
 

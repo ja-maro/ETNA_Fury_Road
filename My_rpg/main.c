@@ -19,6 +19,12 @@ void player_attack(Player_t *player, Enemy_t *enemy)
     enemy->hp -= player->str;
     my_putstr(enemy->def_msg);
     my_putstr("\n");
+    time_t t;
+    srand((unsigned) time(&t));
+    if (rand()%100 < player->luck) {
+        enemy->hp -= player->str;
+        my_putchar("\nCritical !\n");
+    }
 }
 
 void enemy_attack(Player_t *player, Enemy_t *enemy)
@@ -30,7 +36,7 @@ void enemy_attack(Player_t *player, Enemy_t *enemy)
     if (enemy->str > 0) {
         time_t t;
         srand((unsigned) time(&t));
-        if (rand()%2 != 0) {
+        if (rand()%100 < enemy->luck) {
             player->hp -= enemy->str;
             my_putstr("\nCritical !\nYou lose ");
             my_putnbr(enemy->str * 2);

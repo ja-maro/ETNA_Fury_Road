@@ -24,11 +24,13 @@ int main()
     ++i;
     }
 
+    //Item_t **items = init_items();
 
-    
     my_putchar('H');
     my_putchar('e');
     my_putchar('y');
     my_putchar('\n');
     return 0;
+
+
 }

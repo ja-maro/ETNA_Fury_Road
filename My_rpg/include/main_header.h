@@ -14,6 +14,7 @@ void my_putstr(const char *str);
 char *my_readline(void);
 Enemy_t *create_monster(int index);
 Enemy_t **init_enemy (void);
+Location_t *create_location(void);
 int my_strcmp(const char *s1, const char *s2);
 int my_strlen(const char *str);
 

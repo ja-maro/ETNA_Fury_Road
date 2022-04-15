@@ -50,4 +50,13 @@ typedef struct Boss_s
     int luck;
 }Boss_t;
 
+typedef struct Location_s
+{
+    char *name;
+    char *description;
+    Enemy_t **enemies;
+    Boss_t *boss;
+    struct Location_s *next;
+}Location_t;
+
 #endif /* !RPG_H_ */

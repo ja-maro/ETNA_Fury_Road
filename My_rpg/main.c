@@ -14,6 +14,9 @@ int main()
     /* create enemies template */
     Enemy_t **enemies = init_enemy();
 
+    /* create location template */
+    Location_t *location = create_location();
+
     /* readline loop */
     while(i < 9) {
 
@@ -25,7 +28,7 @@ int main()
     }
 
 
-    
+
     my_putchar('H');
     my_putchar('e');
     my_putchar('y');

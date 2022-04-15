@@ -34,8 +34,16 @@ void player_attack(Player_t *player, Enemy_t *enemy)
 
 void enemy_attack(Player_t *player, Enemy_t *enemy)
 {
-    player->hp -= enemy->str;
-    my_putstr("The enemy strikes !\n");
+   time_t t;
+   srand((unsigned) time(&t));
+   if (rand()%2 == 0) {
+       player->hp -= enemy->str;
+       my_putstr("You've been hit !\n");
+   }
+   else {
+       player->hp -= enemy->str * 2;
+       my_putstr("You've been critically hit !\n");
+   }
 }
 
 int main()
@@ -57,7 +65,7 @@ int main()
     my_putstr("Nom du joueur : ");
     my_putstr(curr_player->name);
     my_putstr("\n");
-    
+
             my_putnbr(60);
             my_putchar('\n');
             my_putstr("HP left : ");
@@ -68,12 +76,12 @@ int main()
     while (stage < LAST_STAGE && curr_player->hp > 0) {
         if (player_max_hp > curr_player->hp)
             my_putstr("You are hurt.\n");
-        
+
         curr_enemy = enemies[stage];
         enemy_max_hp = curr_enemy->hp;
         if (stage == 0)
             rpg_intro();
-        
+
         my_putstr("\n");
         start_messages(stage);
 
@@ -92,7 +100,7 @@ int main()
                 player_attack(curr_player, curr_enemy);
                 if (curr_enemy->hp <= 0) {
                     my_putstr("You are the victor !\n");
-                } 
+                }
             } else if (my_strcmp(input, "r") == 0) {
                 heal_self(curr_player, player_max_hp);
             }
@@ -104,14 +112,14 @@ int main()
             if (curr_player->hp < 0) {
                 my_putstr("\nYou've wasted too much time ...\nYou're late now. Florence will not let you in.\n");
                 break;
-            }            
-        }     
+            }
+        }
         if(curr_player->hp < 0)
-            break;  
+            break;
         my_putstr("Ok, let's go to the school, we're still on time !\n\n");
         ++stage;
     }
-    
+
     return 0;
 
 

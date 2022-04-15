@@ -1,4 +1,4 @@
-<img src="./forest-night.gif" alt="forest" width="100%">
+![](forest-night.gif)
 
 
 # Hello, wanderer ! <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px">

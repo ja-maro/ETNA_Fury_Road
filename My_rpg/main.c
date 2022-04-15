@@ -59,6 +59,9 @@ int main()
     Player_t *curr_player = malloc(sizeof(Player_t));
     Enemy_t *curr_enemy;
 
+    /* start messages */
+    start_messages(stage);
+    
     /* init_curr_player(players[0], curr_player); */
     curr_player = players[0];
     player_max_hp = curr_player->hp;
@@ -110,17 +113,17 @@ int main()
             my_putnbr(curr_player->hp);
             my_putchar('\n');
             if (curr_player->hp < 0) {
-                my_putstr("\nYou've wasted too much time ...\nYou're late now. Florence will not let you in.\n");
+                my_putstr("\n");
+                end_messages(11);
                 break;
             }
         }
         if(curr_player->hp < 0)
             break;
         my_putstr("Ok, let's go to the school, we're still on time !\n\n");
+        /* end messages */
+        end_messages(stage);
         ++stage;
     }
-
     return 0;
-
-
 }

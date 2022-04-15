@@ -12,8 +12,11 @@ SRC		=	main.c \
 			functions/my_readline.c \
 			functions/create_monster.c \
 			functions/init_enemy.c  \
+			functions/init_player.c \
+			functions/init_boss.c \
 			functions/my_strcmp.c \
 			functions/my_strlen.c
+
 OBJ		=	$(SRC:.c=.o)
 
 all: $(NAME)

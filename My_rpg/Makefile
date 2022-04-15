@@ -8,6 +8,7 @@ NAME	=	RPG
 
 SRC		=	main.c \
 			functions/my_putchar.c \
+			functions/my_putstr.c \
 			functions/my_readline.c
 
 OBJ		=	$(SRC:.c=.o)

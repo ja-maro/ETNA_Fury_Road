@@ -13,6 +13,7 @@
 #include "rpg.h"
 
 void my_putchar(char c);
+void my_putstr(const char *str);
 char *my_readline(void);
 
 #endif

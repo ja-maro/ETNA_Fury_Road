@@ -9,27 +9,19 @@
 int main()
 {
     char *str;
-    int i = 0;
+    /*Enemy_t **enemies = init_enemy();
+    Player_t **players = init_player();
+    Boss_t **bosses = init_boss(); */
 
-    /* create enemies template */
-    Enemy_t **enemies = init_enemy();
-
+    rpg_intro();
     /* readline loop */
-    while(i < 9) {
-
+    while(1) {
     str = my_readline();
+
     my_putstr(str);
-    my_putstr(enemies[i]->name);
-    my_putchar('\n');
-    ++i;
+    my_putstr("\n");
     }
-
-    //Item_t **items = init_items();
-
-    my_putchar('H');
-    my_putchar('e');
-    my_putchar('y');
-    my_putchar('\n');
+    
     return 0;
 
 

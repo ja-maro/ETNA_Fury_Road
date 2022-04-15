@@ -12,7 +12,7 @@ int main()
     /*Enemy_t **enemies = init_enemy();
     Player_t **players = init_player();
     Boss_t **bosses = init_boss(); */
-    my_loot();
+
     rpg_intro();
     /* readline loop */
     while(1) {

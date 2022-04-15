@@ -6,14 +6,13 @@
 
 #ifndef MAIN_HEADER
 #define MAIN_HEADER
-
-#include "Boss.h"
-#include "Enemy.h"
-#include "Players.h"
 #include "rpg.h"
+#include <stdlib.h>
 
 void my_putchar(char c);
 void my_putstr(const char *str);
 char *my_readline(void);
+Enemy_t *create_monster(int index);
+Enemy_t **init_enemy (void);
 
 #endif

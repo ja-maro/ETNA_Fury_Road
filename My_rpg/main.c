@@ -9,12 +9,19 @@
 int main()
 {
     char *str;
+    int i = 0;
 
-    while(1) {
+    /* create enemies template */
+    Enemy_t **enemies = init_enemy();
+
+    /* readline loop */
+    while(i < 9) {
 
     str = my_readline();
     my_putstr(str);
+    my_putstr(enemies[i]->name);
     my_putchar('\n');
+    ++i;
     }
 
 

@@ -18,9 +18,10 @@ int main()
     while(1) {
     str = my_readline();
 
+    start_messages(stage);
     my_putstr(str);
     my_putstr("\n");
-    start_messages(stage);
+    end_messages(stage);
     stage ++;
     }
     

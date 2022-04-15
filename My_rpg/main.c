@@ -28,9 +28,18 @@ void enemy_attack(Player_t *player, Enemy_t *enemy)
     my_putstr(": ");
     my_putstr(enemy->atk_msg);
     if (enemy->str > 0) {
-        my_putstr("\nYou lose ");
-        my_putnbr(enemy->str);
-        my_putstr(" minutes.\n");
+        time_t t;
+        srand((unsigned) time(&t));
+        if (rand()%2 != 0) {
+            player->hp -= enemy->str;
+            my_putstr("\nCritical !\nYou lose ");
+            my_putnbr(enemy->str * 2);
+        }
+        else {
+            my_putstr("\nYou lose ");
+            my_putnbr(enemy->str);
+        }
+            my_putstr(" minutes.\n");
     }
 }
 
@@ -47,7 +56,7 @@ int main()
 {
     char *input;
     int player_max_hp;
-    int enemy_max_hp;
+    /* int enemy_max_hp; */
     int stage = 0;
     const int LAST_STAGE = 9;
     Enemy_t **enemies = init_enemy();
@@ -65,28 +74,26 @@ int main()
     while (stage < LAST_STAGE && curr_player->hp > 0) {
         
         curr_enemy = enemies[stage];
-        enemy_max_hp = curr_enemy->hp;
+        /* enemy_max_hp = curr_enemy->hp; */
         if (stage == 0)
             rpg_intro();
-        
+
         my_putstr("\n");
         my_putnbr(curr_player->hp);
         my_putstr(" minutes left.\n\n");
         start_messages(stage);
 
         while (curr_enemy->hp > 0) {
-            my_putstr("\t[a] act\t[r] run :\t");
+            my_putstr("\t[a] act \t \t[r] run :\t");
             input = my_readline();
             while (input == NULL ||(my_strcmp(input, "a") != 0 && my_strcmp(input, "r") != 0)) {
-                my_putstr("\t[a] act\t[r] run :\t");
+                my_putstr("\t[a] act \t \t[r] run :\t");
                 input = my_readline();
             }
             if (my_strcmp(input, "a") == 0) {
                 player_attack(curr_player, curr_enemy);
-                if (curr_enemy->hp <= 0) {
-                    my_putstr("You are the victor !\n");
+                if (curr_enemy->hp <= 0)
                     break;
-                } 
             } else if (my_strcmp(input, "r") == 0) {
                 heal_self(curr_player, player_max_hp);
             }
@@ -95,17 +102,17 @@ int main()
             my_putnbr(curr_player->hp);
             my_putstr(" minutes left.\n");
             if (curr_player->hp < 0) {
-                my_putstr("\nYou've wasted too much time ...\nYou're late now. Florence will not let you in.\n");
+                my_putstr("\n");
+                end_messages(11);
                 break;
-            }            
-        }     
+            }
+        }
         if(curr_player->hp < 0)
-            break;  
-        my_putstr("Ok, let's go to the school, we're still on time !\n\n");
+            break;
+        my_putstr("\n");
+        /* end messages */
+        end_messages(stage);
         ++stage;
     }
-    
     return 0;
-
-
 }

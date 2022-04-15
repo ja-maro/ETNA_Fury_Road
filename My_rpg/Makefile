@@ -13,11 +13,13 @@ SRC		=	main.c \
 			functions/my_readline.c \
 			functions/rpg_intro.c \
 			functions/start_messages.c \
+			functions/end_messages.c \
 			functions/init_enemy.c  \
 			functions/init_player.c \
 			functions/init_boss.c \
 			functions/my_strcmp.c \
-			functions/my_strlen.c
+			functions/my_strlen.c \
+			functions/my_loot.c
 
 OBJ		=	$(SRC:.c=.o)
 

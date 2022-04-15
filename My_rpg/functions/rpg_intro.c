@@ -35,7 +35,7 @@ void rpg_intro(void)
     my_putstr("You're a student from ETNA. It's ");
     my_putstr(cs_cmd[1]);
     my_putstr("8am ");
-    my_putstr(cs_cmd[0]); 
+    my_putstr(cs_cmd[0]);
     my_putstr("and you're late !\n");
     my_putstr("Grab what you can and run ! Don't let anyone stop you.\n");
     my_putstr("It's saturday, the exam day. It would be a shame to get a -21...\n");

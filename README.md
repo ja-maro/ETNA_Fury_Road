@@ -3,18 +3,20 @@
 
 # Hello, wanderer ! <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px">
 
-### I'm here to help you...
+### :fire: I'm here to help you... 
 
-### Here you can find the ones responsible for your situation :
+### :milky_way: Here you can find the ones responsible for your situation :
 
 - Jean-Antoine MARO
 - Jean-Antoine PONDAVEN
 - Pierre CHARDAT
 
-### Their goal :
+### :comet: Their goal :
 
 Create a textual rpg with the infamous C langage.
 
-### Their organisation
+### :droplet: Their organisation
 
 - To-do list (Board and issues on GitLab) : https://rendu-git.etna-alternance.net/module-9026/activity-49288/group-975706/-/boards
+
+:cloud_with_lightning_and_rain: Be careful wanderer ... 

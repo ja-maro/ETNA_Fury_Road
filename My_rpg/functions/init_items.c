@@ -12,7 +12,7 @@ Item_t **init_item(void)
 int i;
     int Item_nbr = 7;
 
-    Item_t **items = malloc(Item_nbr * sizeof(Enemy_t));
+    Item_t **items = malloc(Item_nbr * sizeof(Item_t));
     if (items == NULL)
         return NULL;
     for (i = 0; i < Item_nbr; ++i) {

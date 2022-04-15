@@ -9,18 +9,18 @@
 int main()
 {
     char *str;
-    Enemy_t **enemies = init_enemy();
+    /*Enemy_t **enemies = init_enemy();
     Player_t **players = init_player();
-    Boss_t **bosses = init_boss();
+    Boss_t **bosses = init_boss(); */
 
+    rpg_intro();
     /* readline loop */
     while(1) {
-
     str = my_readline();
 
     my_putstr(str);
-    my_putchar('\n');
+    my_putstr("\n");
     }
-
+    
     return 0;
 }

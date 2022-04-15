@@ -14,6 +14,7 @@ int main()
     /* create enemies template */
     Enemy_t **enemies = init_enemy();
     Player_t **players = init_player();
+    Boss_t **bosses = init_boss();
 
     /* readline loop */
     while(i < 9) {
@@ -23,6 +24,7 @@ int main()
     my_putstr(str);
     my_putstr(enemies[i]->name);
     my_putstr(players[i]->name);
+    my_putstr(bosses[i]->name);
     my_putchar('\n');
     ++i;
     }

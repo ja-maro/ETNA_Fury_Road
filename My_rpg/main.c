@@ -9,10 +9,15 @@
 int main()
 {
     char *str;
-    rpg_intro();
+    /*Enemy_t **enemies = init_enemy();
+    Player_t **players = init_player();
+    Boss_t **bosses = init_boss(); */
 
+    rpg_intro();
+    /* readline loop */
     while(1) {
     str = my_readline();
+
     my_putstr(str);
     my_putstr("\n");
     }

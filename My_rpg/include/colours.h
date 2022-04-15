@@ -36,5 +36,6 @@ char *cs_cmd[] = {
     "\x1b[5m",  /*blink*/
     "\x1b[7m",  /*reverse*/
     "\x1b[8m",  /*hidden*/
+    "\033[H\033[J", /*clean terminal*/
 };
 #endif /* !COLOURS */

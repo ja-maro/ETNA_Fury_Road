@@ -25,5 +25,6 @@ Player_t **init_player (void);
 Boss_t **init_boss (void);
 int my_strcmp(const char *s1, const char *s2);
 int my_strlen(const char *str);
+void my_loot(void);
 
 #endif

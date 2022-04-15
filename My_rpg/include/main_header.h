@@ -15,5 +15,8 @@
 void my_putchar(char c);
 void my_putstr(const char *str);
 char *my_readline(void);
+int my_strcmp(const char *s1, const char *s2);
+int my_strlen(const char *str);
+
 
 #endif

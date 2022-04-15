@@ -10,7 +10,7 @@ SRC		=	main.c \
 			functions/my_putchar.c \
 			functions/my_putstr.c \
 			functions/my_readline.c \
-			function/my_strcmp.c \
+			functions/my_strcmp.c \
 			functions/my_strlen.c
 OBJ		=	$(SRC:.c=.o)
 

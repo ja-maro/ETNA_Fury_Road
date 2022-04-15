@@ -1,12 +1,6 @@
 #include <stdio.h>
 
-int my_strlen(const char *str) {
-    int a = 0;
-    while (str[a] != '\0')
-        a++;
-    return (a);
-}
-
+int my_strlen(char *str);
 
 int my_strcmp(const char *s1, const char *s2) {
   int n = 0;

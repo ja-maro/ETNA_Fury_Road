@@ -7,6 +7,7 @@
 #ifndef MAIN_HEADER
 #define MAIN_HEADER
 #include "rpg.h"
+#include <time.h>
 #include <stdlib.h>
 
 void my_putchar(char c);

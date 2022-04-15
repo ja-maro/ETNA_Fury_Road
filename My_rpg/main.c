@@ -99,4 +99,6 @@ int main()
     if(curr_player->hp < 0)
         my_putstr("\nYou've wasted too much time ...\nYou're late now. Florence will not let you in.\n");
     return 0;
+
+
 }

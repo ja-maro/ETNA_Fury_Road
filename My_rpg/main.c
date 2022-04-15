@@ -48,7 +48,6 @@ int main()
     Enemy_t **enemies = init_enemy();
     /* Boss_t **bosses = init_boss(); */
     Player_t **players = init_player();
-    
     Player_t *curr_player = malloc(sizeof(Player_t));
     Enemy_t *curr_enemy;
 
@@ -75,9 +74,8 @@ int main()
         if (stage == 0)
             rpg_intro();
         
-        my_putstr("Here comes someone !");
-        my_putstr(curr_enemy->name);
         my_putstr("\n");
+        start_messages(stage);
 
         while (curr_enemy->hp > 0) {
             my_putstr("The enemy stands in front of you ! \n");

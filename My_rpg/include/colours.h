@@ -6,7 +6,7 @@
 
 #ifndef COLOURS
 #define COLOURS
-char *cs_light[] = {
+static char *cs_text[] = {
       "\x1b[30m",    /*black*/
       "\x1b[31m",    /*red*/
       "\x1b[32m",    /*green*/
@@ -17,18 +17,18 @@ char *cs_light[] = {
       "\x1b[37m",    /*white*/
       "\x1b[38m",    /*crimson*/
       };
-char *cs[] = {
-      "\x1b[40m",    /*black*/   
-      "\x1b[41m",    /*red*/
-      "\x1b[42m",    /*green*/
-      "\x1b[43m",    /*yellow*/
-      "\x1b[44m",    /*blue*/
-      "\x1b[45m",    /*magenta*/
-      "\x1b[46m",    /*cyan*/
-      "\x1b[47m",    /*white*/
-      "\x1b[48m",    /*crimson*/
+static char *cs_bg[] = {
+      "\x1b[40m",    /*black 0*/   
+      "\x1b[41m",    /*red 1*/
+      "\x1b[42m",    /*green 2*/
+      "\x1b[43m",    /*yellow 3*/
+      "\x1b[44m",    /*blue 4*/
+      "\x1b[45m",    /*magenta 5*/
+      "\x1b[46m",    /*cyan 6*/
+      "\x1b[47m",    /*white 7*/
+      "\x1b[48m",    /*crimson 8*/
    };
-char *cs_cmd[] = {
+static char *cs_cmd[] = {
     "\x1b[0m",  /*reset*/
     "\x1b[1m",  /*bright*/
     "\x1b[2m",  /*dim*/

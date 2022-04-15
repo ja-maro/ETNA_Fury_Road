@@ -12,6 +12,7 @@ SRC		=	main.c \
 			functions/my_putnbr.c \
 			functions/my_readline.c \
 			functions/rpg_intro.c \
+			functions/start_messages.c \
 			functions/create_monster.c \
 			functions/init_enemy.c  \
 			functions/init_player.c \

@@ -13,13 +13,16 @@ int main()
 
     /* create enemies template */
     Enemy_t **enemies = init_enemy();
+    Player_t **players = init_player();
 
     /* readline loop */
     while(i < 9) {
 
     str = my_readline();
+
     my_putstr(str);
     my_putstr(enemies[i]->name);
+    my_putstr(players[i]->name);
     my_putchar('\n');
     ++i;
     }

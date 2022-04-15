@@ -9,6 +9,7 @@ NAME	=	RPG
 SRC		=	main.c \
 			functions/my_putchar.c \
 			functions/my_putstr.c \
+			functions/my_putnbr.c \
 			functions/my_readline.c \
 			functions/rpg_intro.c \
 			functions/create_monster.c \

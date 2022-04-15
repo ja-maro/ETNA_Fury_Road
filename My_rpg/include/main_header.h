@@ -11,6 +11,7 @@
 
 void my_putchar(char c);
 void my_putstr(const char *str);
+void my_putnbr(int nbr);
 char *my_readline(void);
 void rpg_intro(void);
 Enemy_t *create_monster(int index);

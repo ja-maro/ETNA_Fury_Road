@@ -58,6 +58,12 @@ int main()
     my_putstr("Nom du joueur : ");
     my_putstr(curr_player->name);
     my_putstr("\n");
+    
+            my_putnbr(60);
+            my_putchar('\n');
+            my_putstr("HP left : ");
+            my_putnbr(curr_player->hp);
+            my_putchar('\n');
 
     /* readline loop */
     while (stage < LAST_STAGE && curr_player->hp > 0) {
@@ -69,7 +75,9 @@ int main()
         if (stage == 0)
             rpg_intro();
         
-        printf("Here comes someone ! %s\n", curr_enemy->name);
+        my_putstr("Here comes someone !");
+        my_putstr(curr_enemy->name);
+        my_putstr("\n");
 
         while (curr_enemy->hp > 0) {
             my_putstr("The enemy stands in front of you ! \n");
@@ -92,12 +100,20 @@ int main()
             }
             free(input);
             enemy_attack(curr_player, curr_enemy);
-        }       
+            my_putstr("Minutes left : ");
+            my_putnbr(curr_player->hp);
+            my_putchar('\n');
+            if (curr_player->hp < 0) {
+                my_putstr("\nYou've wasted too much time ...\nYou're late now. Florence will not let you in.\n");
+                break;
+            }            
+        }     
+        if(curr_player->hp < 0)
+            break;  
         my_putstr("Ok, let's go to the school, we're still on time !\n\n");
         ++stage;
     }
-    if(curr_player->hp < 0)
-        my_putstr("\nYou've wasted too much time ...\nYou're late now. Florence will not let you in.\n");
+    
     return 0;
 
 

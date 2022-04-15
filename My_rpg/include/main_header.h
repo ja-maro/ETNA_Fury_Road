@@ -15,7 +15,6 @@ void my_putnbr(int nbr);
 char *my_readline(void);
 void rpg_intro(void);
 void start_messages(int stage);
-Enemy_t *create_monster(int index);
 Enemy_t **init_enemy (void);
 Item_t *create_item(int index);
 Item_t **init_item (void);

@@ -8,10 +8,10 @@
 #ifndef BOSS_H_
 #define BOSS_H_
 
-char *Boss_name[] = {"Ganon", "Gleeoks", "Volvagia", "Onox", "Odolwa", "Stallord", "Odolwa"};
+char *Boss_name[] = {"Edouard Moulin", "Gleeoks", "Volvagia", "Onox", "Odolwa", "Stallord", "Odolwa"};
 
 int Boss_hp[] = {
-    350,
+    150,
     350,
     420,
     500,
@@ -31,7 +31,7 @@ int Boss_mp[] = {
 };
 
 int Boss_str[] = {
-    15,
+    20,
     20,
     14,
     16,

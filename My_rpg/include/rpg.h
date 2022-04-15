@@ -27,6 +27,8 @@ typedef struct Player {
 typedef struct Enemy_s
 {
     char *name;
+    char *atk_msg;
+    char *def_msg;
     int hp;
     int mp;
     int str;

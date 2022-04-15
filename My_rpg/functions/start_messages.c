@@ -14,7 +14,7 @@ void stage0(void)
     my_putstr(cs_cmd[1]);
     my_putstr(cs_cmd[3]);
     my_putstr(cs_text[1]);
-    my_putstr("\tTHE ALARM CLOCK\n");
+    my_putstr("\tTHE COMFY BED\n");
     my_putstr(cs_cmd[0]);
     my_putstr("You're late, but you feel so tired... Let's sleep a little more?\n");
 }

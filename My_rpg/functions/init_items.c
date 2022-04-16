@@ -26,7 +26,7 @@ Item_t *create_item(int index)
 }
 Item_t **init_item(void)
 {
-int i;
+    int i;
     int Item_nbr = 7;
 
     Item_t **items = malloc(Item_nbr * sizeof(Item_t));

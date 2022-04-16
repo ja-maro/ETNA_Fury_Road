@@ -207,6 +207,8 @@ int main()
     Player_t **players = init_player();
     Player_t *curr_player = malloc(sizeof(Player_t));
     Enemy_t *curr_enemy;
+    Item_t **items = init_item();
+
 
     curr_player = players[0];
     player_max_hp = curr_player->hp;
@@ -236,7 +238,9 @@ int main()
             if (my_strcmp(input, "a") == 0) {
                 player_attack(curr_player, curr_enemy);
                 if (curr_enemy->hp <= 0)
-                    break;
+
+
+                  break;
             } else if (my_strcmp(input, "r") == 0) {
                 heal_self(curr_player, player_max_hp);
             }
@@ -246,6 +250,7 @@ int main()
             my_putstr(" minutes left.\n");
             if (curr_player->hp < 0) {
                 my_putstr("\n");
+
                 end_messages(11);
                 break;
             }

@@ -12,7 +12,7 @@ void stage0end(void)
 {
     my_putstr(cs_cmd[1]);
     my_putstr(cs_cmd[3]);
-    my_putstr(cs_text[1]);
+    my_putstr(cs_text[2]);
     my_putstr("\tFINALLY AWAKE\n");
     my_putstr(cs_cmd[0]);
     my_putstr("Ah ! You're finally awake ! I knew your pillow and your bed couldn't stop you ! You're really the best.\n");
@@ -21,7 +21,7 @@ void stage1end(void)
 {
     my_putstr(cs_cmd[1]);
     my_putstr(cs_cmd[3]);
-    my_putstr(cs_text[1]);
+    my_putstr(cs_text[2]);
     my_putstr("\tWHAT A GREAT DAY\n");
     my_putstr(cs_cmd[0]);
     my_putstr("Your partner is laying, tired, broken but deeply satisfied by your hugs. It's hard to let go, but you're already late. You MUST go on !\n");
@@ -30,7 +30,7 @@ void stage2end(void)
 {
     my_putstr(cs_cmd[1]);
     my_putstr(cs_cmd[3]);
-    my_putstr(cs_text[1]);
+    my_putstr(cs_text[2]);
     my_putstr("\tNO COUNTRY FOR OLD PEOPLE\n");
     my_putstr(cs_cmd[0]);
     my_putstr("The cycle of life and death continues... For the worse or the better !\n");
@@ -39,7 +39,7 @@ void stage3end(void)
 {
     my_putstr(cs_cmd[1]);
     my_putstr(cs_cmd[3]);
-    my_putstr(cs_text[1]);
+    my_putstr(cs_text[2]);
     my_putstr("\tNOTHING CAN CONTROL YOU\n");
     my_putstr(cs_cmd[0]);
     my_putstr("The controller is down, the horse is delicious. A nice piece of meat ! I prefer it that way too.\n");
@@ -48,7 +48,7 @@ void stage4end(void)
 {
     my_putstr(cs_cmd[1]);
     my_putstr(cs_cmd[3]);
-    my_putstr(cs_text[1]);
+    my_putstr(cs_text[2]);
     my_putstr("\tSPLAAASH\n");
     my_putstr(cs_cmd[0]);
     my_putstr(cs_text[5]);
@@ -60,7 +60,7 @@ void stage5end(void)
 {
     my_putstr(cs_cmd[1]);
     my_putstr(cs_cmd[3]);
-    my_putstr(cs_text[1]);
+    my_putstr(cs_text[2]);
     my_putstr("\tIT THIS\n");
     my_putstr(cs_cmd[0]);
     my_putstr("You can be proud of yourself. And trust me... He deserved this ! ... Maybe...\n");
@@ -69,7 +69,7 @@ void stage6end(void)
 {
     my_putstr(cs_cmd[1]);
     my_putstr(cs_cmd[3]);
-    my_putstr(cs_text[1]);
+    my_putstr(cs_text[2]);
     my_putstr("\tIS TAKEN WHO BELIEVED TO TAKE\n");
     my_putstr(cs_cmd[0]);
     my_putstr("Great job ! You may have a chance to be in time by politely leaving.\n");
@@ -80,7 +80,7 @@ void stage7end(void)
 {
     my_putstr(cs_cmd[1]);
     my_putstr(cs_cmd[3]);
-    my_putstr(cs_text[1]);
+    my_putstr(cs_text[2]);
     my_putstr("\tSMOKE ME THIS\n");
     my_putstr(cs_cmd[0]);
     my_putstr(cs_text[5]);
@@ -92,7 +92,7 @@ void stage8end(void)
 {
     my_putstr(cs_cmd[1]);
     my_putstr(cs_cmd[3]);
-    my_putstr(cs_text[1]);
+    my_putstr(cs_text[2]);
     my_putstr("\tTHE ENLIGHTEMENT\n");
     my_putstr(cs_cmd[0]);
     my_putstr("You don't have to copy/paste someone who's already a copy paster. But They'll respect you for what you are.\n");
@@ -101,7 +101,7 @@ void stage8end(void)
 void stage9end(void)
 {
 my_putstr(cs_cmd[1]);
-    my_putstr(cs_text[1]);
+    my_putstr(cs_text[2]);
     my_putstr("\n\n\n");
     my_putstr("\t\t       _      _               \n");    
     my_putstr("\t\t      (_)    | |                  \n");

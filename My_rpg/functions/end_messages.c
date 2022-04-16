@@ -1,6 +1,5 @@
 /*
-** ETNA PROJECT, 13/04/2022 by maro_j
-** /home/jean-antoine/ETNA/CTW/Piscine
+** ETNA PROJECT, 13/04/2022 by charda_p maro_j pondaven_j
 ** File description:
 **     Messages at the end of the stage
 */
@@ -34,7 +33,7 @@ void stage2end(void)
     my_putstr(cs_text[1]);
     my_putstr("\tNO COUNTRY FOR OLD PEOPLE\n");
     my_putstr(cs_cmd[0]);
-    my_putstr("The cycle of life and death continue... For the worse or the better !\n");
+    my_putstr("The cycle of life and death continues... For the worse or the better !\n");
 }
 void stage3end(void)
 {
@@ -55,7 +54,7 @@ void stage4end(void)
     my_putstr(cs_text[5]);
     my_putstr("eeeeergh\n");
     my_putstr(cs_cmd[0]);
-    my_putstr("Do i really need to explain what happened here ?\n");
+    my_putstr("Do I really need to explain what happened here ?\n");
 }
 void stage5end(void)
 {
@@ -64,7 +63,7 @@ void stage5end(void)
     my_putstr(cs_text[1]);
     my_putstr("\tIT THIS\n");
     my_putstr(cs_cmd[0]);
-    my_putstr("You can be proud of yourself. And trust me... He deserve this ! ... Maybe...\n");
+    my_putstr("You can be proud of yourself. And trust me... He deserved this ! ... Maybe...\n");
 }
 void stage6end(void)
 {
@@ -73,8 +72,8 @@ void stage6end(void)
     my_putstr(cs_text[1]);
     my_putstr("\tIS TAKEN WHO BELIEVED TO TAKE\n");
     my_putstr(cs_cmd[0]);
-    my_putstr("Great job ! You may have a chance to be in time by politely refusing to come.\n");
-    my_putstr("Well, your friends will never talk to you again but still ! You're still in time !\n");
+    my_putstr("Great job ! You may have a chance to be in time by politely leaving.\n");
+    my_putstr("Well, your friends will never talk to you again but still ! You'll be on time !\n");
 
 }
 void stage7end(void)
@@ -87,7 +86,7 @@ void stage7end(void)
     my_putstr(cs_text[5]);
     my_putstr("Okay, promis jte rembourse demain, arrete de me frapper stp...\n");
     my_putstr(cs_cmd[0]);
-    my_putstr("Give him a last reminder ! And take him fifty cents to buy a coffee !\n");
+    my_putstr("Give him a last reminder ! And take fifty cents from him to buy some coffee !\n");
 }
 void stage8end(void)
 {
@@ -96,25 +95,35 @@ void stage8end(void)
     my_putstr(cs_text[1]);
     my_putstr("\tTHE ENLIGHTEMENT\n");
     my_putstr(cs_cmd[0]);
-    my_putstr("You don't have to copy paste someone who's already a copy paster. But They'll respect you for what you are.\n");
+    my_putstr("You don't have to copy/paste someone who's already a copy paster. But They'll respect you for what you are.\n");
     my_putstr("A true dev full stackoverflow\n");
 }
 void stage9end(void)
 {
 my_putstr(cs_cmd[1]);
-    my_putstr(cs_cmd[3]);
     my_putstr(cs_text[1]);
-    my_putstr("\tVICTORY\n");
+    my_putstr("\n\n\n");
+    my_putstr("\t\t       _      _               \n");    
+    my_putstr("\t\t      (_)    | |                  \n");
+    my_putstr("\t\t__   ___  ___| |_ ___  _ __ _   _ \n");
+    my_putstr("\t\t\\ \\ / / |/ __| __/ _ \\| '__| | | |\n");
+    my_putstr("\t\t \\ V /| | (__| || (_) | |  | |_| |\n");
+    my_putstr("\t\t  \\_/ |_|\\___|\\__\\___/|_|   \\__, |\n");
+    my_putstr("\t\t                             __/ |\n");
+    my_putstr("\t\t                            |___/ \n");
+    my_putstr("\n");
     my_putstr(cs_cmd[0]);
     my_putstr("You did it... Incredible... You arrived in time !\n");
     my_putstr("You can be proud of yourself. The journey was arduous...\n");
     my_putstr("But now you know the truth about THE MOULINETTE...\n");
-    my_putstr("It's actually running with the siphoned souls of students who have disappeared from the formation...\n");
+    my_putstr("It's actually running with the siphoned souls of students who have disappeared from the training course...\n");
     my_putstr("...\n");
     my_putstr(cs_text[3]);
     my_putstr(cs_bg[0]);
-    my_putstr("BURN EVERYTHING !");
+    my_putstr("\n\tBURN EVERYTHING !");
     my_putstr(cs_cmd[0]);
+    my_putstr("\n");
+    my_putstr("\n");
     my_putstr("\n");
 }
 

@@ -45,7 +45,7 @@ void enemy_attack(Player_t *player, Enemy_t *enemy)
             my_putstr("\nYou lose ");
             my_putnbr(enemy->str);
         }
-            my_putstr(" minutes.\n");
+        my_putstr(" minutes.\n");
     }
 }
 
@@ -58,6 +58,19 @@ void boss_attack(Player_t *player, Boss_t *boss)
     my_putstr(" minutes.\n");
 }
 
+void player_boss_attack(Player_t *player, Boss_t *boss)
+{
+    time_t t;
+    boss->hp -= player->str;
+    /*my_putstr(boss->def_msg);
+    my_putstr("\n");*/
+    srand((unsigned) time(&t));
+    if (rand()%100 < player->luck) {
+        boss->hp -= player->str;
+        my_putstr("\nCritical !\n");
+    }
+}
+
 int main()
 {
     char *input;
@@ -66,13 +79,15 @@ int main()
     int stage = 0;
     const int LAST_STAGE = 9;
     Enemy_t **enemies = init_enemy();
-    /* Boss_t **bosses = init_boss(); */
+    Boss_t **bosses = init_boss();
     Player_t **players = init_player();
     Player_t *curr_player = malloc(sizeof(Player_t));
     Enemy_t *curr_enemy;
+    Boss_t *curr_boss = malloc(sizeof(curr_boss));
 
     curr_player = players[0];
     player_max_hp = curr_player->hp;
+    curr_boss = bosses[0];
 
     my_putchar('\n');
 
@@ -120,5 +135,43 @@ int main()
         end_messages(stage);
         ++stage;
     }
+
+    while (stage == LAST_STAGE && curr_player->hp > 0 && curr_boss->hp > 0) {
+        my_putstr("\n");
+        my_putnbr(curr_player->hp);
+        my_putstr(" minutes left.\n\n");
+        start_messages(stage);
+
+
+         while (curr_boss->hp > 0) {
+            my_putstr("\t[a] act \t \t[r] run :\t");
+            input = my_readline();
+            while (input == NULL ||(my_strcmp(input, "a") != 0 && my_strcmp(input, "r") != 0)) {
+                my_putstr("\t[a] act \t \t[r] run :\t");
+                input = my_readline();
+            }
+            if (my_strcmp(input, "a") == 0) {
+                player_boss_attack(curr_player, curr_boss);
+                if (curr_boss->hp <= 0)
+                    break;
+            } else if (my_strcmp(input, "r") == 0) {
+                heal_self(curr_player, player_max_hp);
+            }
+            free(input);
+            boss_attack(curr_player, curr_boss);
+            my_putnbr(curr_player->hp);
+            my_putstr(" minutes left.\n");
+            if (curr_player->hp < 0) {
+                my_putstr("\n");
+                end_messages(11);
+                break;
+            }
+        }
+
+
+
+    }
+    if (curr_player->hp > 0)
+        end_messages(stage);
     return 0;
 }

@@ -1,7 +1,7 @@
 ![](forest-night.gif)
 
 
-# Hello, wanderer ! <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px">
+# Hello, student ! <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px">
 
 ### :fire: I'm here to help you... 
 
@@ -19,4 +19,8 @@ Create a textual rpg with the infamous C langage.
 
 - To-do list (Board and issues on GitLab) : https://rendu-git.etna-alternance.net/module-9026/activity-49288/group-975706/-/boards
 
-:cloud_with_rain: Be careful wanderer ... 
+:cloud_with_rain: Be careful student ... 
+
+### To launch : 
+make
+./RPG

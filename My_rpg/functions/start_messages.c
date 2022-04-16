@@ -16,7 +16,7 @@ void stage0(void)
     my_putstr(cs_text[1]);
     my_putstr("\tTHE COMFY BED\n");
     my_putstr(cs_cmd[0]);
-    my_putstr("You're late, but you feel so tired... Let's sleep a little more?\n");
+    my_putstr("You're late, but you feel so tired... Let's sleep a little more ...\n");
 }
 void stage1(void)
 {
@@ -75,7 +75,7 @@ void stage6(void)
     my_putstr(cs_text[1]);
     my_putstr("\tTHE BEER TRAP (or guet-apinte)\n");
     my_putstr(cs_cmd[0]);
-    my_putstr("This is THE place to be... The CARRE ! Your friends are waving at you. You should go see them right ?\n");
+    my_putstr("This is THE place to be... The CARRE ! Your friends are waving at you. You should go talk to them, right ?\n");
 }
 void stage7(void)
 {
@@ -87,7 +87,7 @@ void stage7(void)
     my_putstr(cs_text[5]);
     my_putstr("Hey ! T'as pas une cloppe ? Stp jte rembourse !\n");
     my_putstr(cs_cmd[0]);
-    my_putstr("He's speaking nonsense. He sould be the one giving you a cigarette !\n");
+    my_putstr("He's speaking nonsense. He should be the one giving you a cigarette !\n");
 }
 void stage8(void)
 {
@@ -99,11 +99,11 @@ void stage8(void)
     my_putstr(cs_text[5]);
     my_putstr("COME ON MY FRIEND ! I NEED SOME CODE ! GIVE ME SOME !\n");
     my_putstr(cs_cmd[0]);
-    my_putstr("Run, or CRUSH E V E R Y   LAST ONE OF THEM HAhahAHAhaHaAaAHaA !\n");
+    my_putstr("Run, or CRUSH   E V E R Y   LAST ONE OF THEM HAhahAHAhaHaAaAHaA !\n");
 }
 void stage9(void)
 {
-my_putstr(cs_cmd[1]);
+    my_putstr(cs_cmd[1]);
     my_putstr(cs_cmd[3]);
     my_putstr(cs_text[1]);
     my_putstr("\tTHE ULTIMATE CHALLENGE\n");
@@ -116,7 +116,7 @@ my_putstr(cs_cmd[1]);
     my_putstr(cs_cmd[3]);
     my_putstr("\tTHE MOULINETTE\n");
     my_putstr(cs_cmd[0]);
-    my_putstr("Destroy it ! And unravel the truth of it's existence !\n");
+    my_putstr("Destroy it ! And unravel the truth of its existence !\n");
 }
 
 void start_messages(int stage)

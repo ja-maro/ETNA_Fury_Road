@@ -1,5 +1,8 @@
 #include "main_header.h"
 #include <time.h>
+#include <stdlib.h>
+#include "rpg.h"
+#include "Item.h"
 
 
 void my_loot(void) {
@@ -16,7 +19,7 @@ void my_loot(void) {
       if (number >= 0 && number <= 49) {
         int number =  rand() % 2;
         if (number == 0) {
-           my_putstr("Orc\n");
+           my_putstr(item -> name);
         }
         else {
            my_putstr("Troll\n");

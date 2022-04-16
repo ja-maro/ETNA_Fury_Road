@@ -14,6 +14,143 @@ void heal_self(Player_t *player, int max_hp)
     my_putstr("Wait ... they're following you ?!\n");
 }
 
+void my_loot( Item_t **item) {
+   int i;
+   int n= 1;
+   time_t t;
+
+   /* Intializes random number generator */
+   srand((unsigned) time(&t));
+
+   /* Print 1 random numbers from 0 to 7 */
+   for( i = 0 ; i < n ; i++ ) {
+      int number =  rand() % 100;
+      if (number >= 0 && number <= 49) {
+        int number =  rand() % 2;
+        if (number == 0) {
+           my_putstr(item[0] -> name);
+        }
+        else {
+           my_putstr(item[1] -> name);
+      }
+      }
+      else if (number > 49 && number <= 79) {
+        int number =  rand() % 2;
+        if (number == 0) {
+            my_putstr(item[2] -> name);
+        }
+        else {
+            my_putstr(item[3] -> name);
+      }
+      }
+      else if (number >79 && number <= 94) {
+        int number =  rand() % 2;
+        if (number == 0) {
+            my_putstr(item[4] -> name);
+        }
+        else {
+            my_putstr(item[5] -> name);
+        }
+      }
+      else if (number >94 && number <= 98) {
+        int number =  rand() % 2;
+        if (number == 0) {
+            my_putstr(item[6] -> name);
+        }
+        else {
+            my_putstr(item[7] -> name);
+        }
+
+      }
+      else if (number >98 && number == 99) {
+        int number =  rand() % 2;
+        if (number == 0) {
+            my_putstr(item[8] -> name);
+        }
+        else {
+            my_putstr(item[9] -> name);
+        }
+      }
+   }
+}
+
+void use_item(Player_t *player, Item_t *item)
+{
+    if (item->hp > 0) {
+        player->hp += item->hp;
+        my_putstr("You picked up a ");
+        my_putstr(item->name);
+        my_putstr("it adds: ");
+        my_putnbr(item->hp);
+        my_putstr(" to your health\n");
+        my_putstr("\n");
+    }
+    if (item->mp > 0) {
+        player->mp += item->mp;
+        my_putstr("You picked up a ");
+        my_putstr(item->name);
+        my_putstr("it adds: ");
+        my_putnbr(item->mp);
+        my_putstr(" to your magic points\n");
+        my_putstr("\n");
+    }
+    if (item->str > 0) {
+        player->str += item->str;
+        my_putstr("You picked up a ");
+        my_putstr(item->name);
+        my_putstr("it adds: ");
+        my_putnbr(item->str);
+        my_putstr(" to your strength\n");
+        my_putstr("\n");
+    }
+    if (item->inte > 0) {
+        player->inte += item->inte;
+        my_putstr("You picked up a ");
+        my_putstr(item->name);
+        my_putstr("it adds:");
+        my_putnbr(item->inte);
+        my_putstr(" to your intelligence\n");
+        my_putstr("\n");
+    }
+    if (item->def > 0) {
+        player->def += item->def;
+        my_putstr("You picked up a ");
+        my_putstr(item->name);
+        my_putstr("it adds:");
+        my_putnbr(item->def);
+        my_putstr(" to your defense\n");
+        my_putstr("\n");
+    }
+    if (item->res > 0) {
+        player->res += item->res;
+        my_putstr("You picked up a ");
+        my_putstr(item->name);
+        my_putstr("it adds:");
+        my_putnbr(item->res);
+        my_putstr(" to your resistance\n");
+        my_putstr("\n");
+    }
+    if (item->spd > 0) {
+        player->spd += item->spd;
+        my_putstr("You picked up a ");
+        my_putstr(item->name);
+        my_putstr("it adds:");
+        my_putnbr(item->spd);
+        my_putstr(" to your speed\n");
+        my_putstr("\n");
+    }
+    if (item->luck > 0) {
+        player->luck += item->luck;
+        my_putstr("You picked up a ");
+        my_putstr(item->name);
+        my_putstr("it adds:");
+        my_putnbr(item->luck);
+        my_putstr(" to your luck\n");
+        my_putstr("\n");
+    }
+}
+
+
 void player_attack(Player_t *player, Enemy_t *enemy)
 {
     time_t t;
@@ -78,7 +215,7 @@ int main()
 
     /* readline loop */
     while (stage < LAST_STAGE && curr_player->hp > 0) {
-        
+
         curr_enemy = enemies[stage];
         /* enemy_max_hp = curr_enemy->hp; */
         if (stage == 0)

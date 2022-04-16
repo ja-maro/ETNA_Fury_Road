@@ -121,6 +121,14 @@ void stage9(void)
 
 void start_messages(int stage)
 {
+    my_putstr("\n");
+    my_putstr(cs_bg[0]);
+    my_putstr("\n");
+    my_putstr("\n");
+    my_putstr(cs_cmd[0]);
+    my_putstr("\n");
+    my_putstr("\n");
+    my_putstr("\n");
     switch ( stage )
 {
     case 0:

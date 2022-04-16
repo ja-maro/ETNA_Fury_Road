@@ -5,6 +5,7 @@
 */
 
 #include "main_header.h"
+#include "colours.h"
 
 void heal_self(Player_t *player, int max_hp)
 {
@@ -18,32 +19,62 @@ void player_attack(Player_t *player, Enemy_t *enemy)
 {
     time_t t;
     enemy->hp -= player->str;
+    my_putstr(cs_cmd[1]);
+    my_putstr("\n\t");
     my_putstr(enemy->def_msg);
-    my_putstr("\n");
+    my_putstr(cs_cmd[0]);
+    my_putstr("\n\n");
     srand((unsigned) time(&t));
     if (rand()%100 < player->luck) {
         enemy->hp -= player->str;
-        my_putstr("\nCritical !\n");
+        my_putstr("\n");
+        my_putstr(cs_text[1]);
+        my_putstr(cs_cmd[1]);
+        my_putstr("\t\t!!!GODLIKE!!!");
+        my_putstr(cs_cmd[0]);
+        my_putstr("\n");
     }
 }
 
 void enemy_attack(Player_t *player, Enemy_t *enemy)
 {
     player->hp -= enemy->str;
+    my_putstr(cs_cmd[1]);
+    my_putstr(cs_cmd[3]);
+    my_putstr(cs_text[1]);
+    my_putstr("\t\t");
     my_putstr(enemy->name);
-    my_putstr(": ");
+    my_putstr(cs_cmd[0]);
+    my_putstr(": \n");
+    my_putstr("\t\t");
+    my_putstr(cs_text[5]);
     my_putstr(enemy->atk_msg);
+    my_putstr(cs_cmd[0]);
+    my_putstr("\n");
+    my_putstr("\n");
     if (enemy->str > 0) {
         time_t t;
         srand((unsigned) time(&t));
         if (rand()%100 < enemy->luck) {
             player->hp -= enemy->str;
-            my_putstr("\nCritical !\nYou lose ");
+            my_putstr("\n");
+            my_putstr(cs_text[1]);
+            my_putstr(cs_cmd[1]);
+            my_putstr("!!!It's super effective on you!!!");
+            my_putstr(cs_cmd[0]);
+            my_putstr("\n");
+            my_putstr("You lose ");
+            my_putstr(cs_text[3]);
+            my_putstr(cs_cmd[1]);
             my_putnbr(enemy->str * 2);
+            my_putstr(cs_cmd[0]);
         }
         else {
             my_putstr("\nYou lose ");
+            my_putstr(cs_text[3]);
+            my_putstr(cs_cmd[1]);
             my_putnbr(enemy->str);
+            my_putstr(cs_cmd[0]);
         }
         my_putstr(" minutes.\n");
     }
@@ -54,7 +85,10 @@ void boss_attack(Player_t *player, Boss_t *boss)
     player->hp -= boss->str;
     my_putstr(boss->name);
     my_putstr(" strikes !\nYou lose ");
+    my_putstr(cs_text[3]);
+    my_putstr(cs_cmd[1]);
     my_putnbr(boss->str);
+    my_putstr(cs_cmd[0]);
     my_putstr(" minutes.\n");
 }
 
@@ -67,7 +101,12 @@ void player_boss_attack(Player_t *player, Boss_t *boss)
     srand((unsigned) time(&t));
     if (rand()%100 < player->luck) {
         boss->hp -= player->str;
-        my_putstr("\nCritical !\n");
+        my_putstr("\n");
+        my_putstr(cs_text[1]);
+        my_putstr(cs_cmd[1]);
+        my_putstr("!!!YOU'RE THE BEST!!!");
+        my_putstr(cs_cmd[0]);
+        my_putstr("\n");
     }
 }
 
@@ -89,6 +128,8 @@ int main()
     player_max_hp = curr_player->hp;
     curr_boss = bosses[0];
 
+/* clear the terminal on launch */
+    my_putstr(cs_cmd[7]);
     my_putchar('\n');
 
     /* readline loop */
@@ -100,15 +141,41 @@ int main()
             rpg_intro();
 
         my_putstr("\n");
+        my_putstr(cs_text[6]);
+        my_putstr(cs_cmd[1]);
         my_putnbr(curr_player->hp);
+        my_putstr(cs_cmd[0]);
         my_putstr(" minutes left.\n\n");
         start_messages(stage);
 
         while (curr_enemy->hp > 0) {
-            my_putstr("\t[a] act \t \t[r] run :\t");
+            my_putstr(cs_bg[6]);
+            my_putstr(cs_text[0]);
+            my_putstr(cs_cmd[1]);
+            my_putstr("\t[a]");
+            my_putstr(cs_cmd[0]);
+            my_putstr(" act \t \t");
+            my_putstr(cs_bg[6]);
+            my_putstr(cs_text[0]);
+            my_putstr(cs_cmd[1]);
+            my_putstr("[r]");
+            my_putstr(cs_cmd[0]);
+            my_putstr(" run :\t");
             input = my_readline();
+
             while (input == NULL ||(my_strcmp(input, "a") != 0 && my_strcmp(input, "r") != 0)) {
-                my_putstr("\t[a] act \t \t[r] run :\t");
+                my_putstr(cs_bg[6]);
+                my_putstr(cs_text[0]);
+                my_putstr(cs_cmd[1]);
+                my_putstr("\t[a]");
+                my_putstr(cs_cmd[0]);
+                my_putstr(" act \t \t");
+                my_putstr(cs_bg[6]);
+                my_putstr(cs_text[0]);
+                my_putstr(cs_cmd[1]);
+                my_putstr("[r]");
+                my_putstr(cs_cmd[0]);
+                my_putstr(" run :\t");
                 input = my_readline();
             }
             if (my_strcmp(input, "a") == 0) {
@@ -120,8 +187,13 @@ int main()
             }
             free(input);
             enemy_attack(curr_player, curr_enemy);
+
+            my_putstr(cs_text[6]);
+            my_putstr(cs_cmd[1]);
             my_putnbr(curr_player->hp);
-            my_putstr(" minutes left.\n");
+            my_putstr(cs_cmd[0]);
+            my_putstr(" minutes left.\n\n");
+
             if (curr_player->hp < 0) {
                 my_putstr("\n");
                 end_messages(11);
@@ -138,16 +210,42 @@ int main()
 
     while (stage == LAST_STAGE && curr_player->hp > 0 && curr_boss->hp > 0) {
         my_putstr("\n");
+        my_putstr(cs_text[6]);
+        my_putstr(cs_cmd[1]);
         my_putnbr(curr_player->hp);
+        my_putstr(cs_cmd[0]);
         my_putstr(" minutes left.\n\n");
         start_messages(stage);
 
 
          while (curr_boss->hp > 0) {
-            my_putstr("\t[a] act \t \t[r] run :\t");
+            my_putstr(cs_bg[6]);
+            my_putstr(cs_text[0]);
+            my_putstr(cs_cmd[1]);
+            my_putstr("\t[a]");
+            my_putstr(cs_cmd[0]);
+            my_putstr(" act \t \t");
+            my_putstr(cs_bg[6]);
+            my_putstr(cs_text[0]);
+            my_putstr(cs_cmd[1]);
+            my_putstr("[r]");
+            my_putstr(cs_cmd[0]);
+            my_putstr(" run :\t");
             input = my_readline();
             while (input == NULL ||(my_strcmp(input, "a") != 0 && my_strcmp(input, "r") != 0)) {
                 my_putstr("\t[a] act \t \t[r] run :\t");
+                my_putstr(cs_bg[6]);
+                my_putstr(cs_text[0]);
+                my_putstr(cs_cmd[1]);
+                my_putstr("\t[a]");
+                my_putstr(cs_cmd[0]);
+                my_putstr(" act \t \t");
+                my_putstr(cs_bg[6]);
+                my_putstr(cs_text[0]);
+                my_putstr(cs_cmd[1]);
+                my_putstr("[r]");
+                my_putstr(cs_cmd[0]);
+                my_putstr(" run :\t");
                 input = my_readline();
             }
             if (my_strcmp(input, "a") == 0) {
@@ -159,8 +257,12 @@ int main()
             }
             free(input);
             boss_attack(curr_player, curr_boss);
+            my_putstr("\n");
+            my_putstr(cs_text[6]);
+            my_putstr(cs_cmd[1]);
             my_putnbr(curr_player->hp);
-            my_putstr(" minutes left.\n");
+            my_putstr(cs_cmd[0]);
+            my_putstr(" minutes left.\n\n");
             if (curr_player->hp < 0) {
                 my_putstr("\n");
                 end_messages(11);

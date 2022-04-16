@@ -11,7 +11,7 @@
 char *Boss_name[] = {"Edouard Moulin", "Gleeoks", "Volvagia", "Onox", "Odolwa", "Stallord", "Odolwa"};
 
 int Boss_hp[] = {
-    10,
+    100,
     350,
     420,
     500,

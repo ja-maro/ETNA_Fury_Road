@@ -95,8 +95,8 @@ void stage8end(void)
     my_putstr(cs_text[2]);
     my_putstr("\tTHE ENLIGHTEMENT\n");
     my_putstr(cs_cmd[0]);
-    my_putstr("You don't have to copy/paste someone who's already a copy paster. But They'll respect you for what you are.\n");
-    my_putstr("A true dev full stackoverflow\n");
+    my_putstr("Now they know the truth... There is no dev THERE IS ONLY STACKOVERFLOW !!!\n");
+    my_putstr("All shall praise the mighty hivemind STAAAAACKOOOOVERRRFLLOOOOWW !!!\n");
 }
 void stage9end(void)
 {

@@ -27,7 +27,7 @@ char *Enemy_atk_msg[] = {
     "Your studies are important, but what do they mean in the face of true love ?",
     "That chihuahua has sharp teeth ! Let's stear clear of the pest !",
     "The access gates won't budge !",
-    "You search your bag. Maybe you have something to give to that poor soul ?",
+    "Can you search your bag ? Maybe you have something to give to that poor soul ? Meat ? Brain ?",
     "Please ! Stop beating me ! I have a family !\n",
     "Il a bu son verre comme les autres ! Il est des notres !",
     "Ten a pa 1 autre ? Allé stp !",

@@ -25,7 +25,7 @@ void stage1end(void)
     my_putstr(cs_text[1]);
     my_putstr("\tWHAT A GREAT DAY\n");
     my_putstr(cs_cmd[0]);
-    my_putstr("Your partner is laying, tired, broken but deeply satisfied by your hugs. It's hard to let her go, but you're already late. You MUST go on !\n");
+    my_putstr("Your partner is laying, tired, broken but deeply satisfied by your hugs. It's hard to let go, but you're already late. You MUST go on !\n");
 }
 void stage2end(void)
 {

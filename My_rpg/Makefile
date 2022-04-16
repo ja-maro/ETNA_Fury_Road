@@ -14,7 +14,6 @@ SRC		=	main.c \
 			functions/rpg_intro.c \
 			functions/start_messages.c \
 			functions/end_messages.c \
-			functions/create_monster.c \
 			functions/init_enemy.c  \
 			functions/init_player.c \
 			functions/init_boss.c \
